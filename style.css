@@ -25,7 +25,7 @@ button {
   background-color: #f3327c;
   color: white;
   font-size: 20px;
-  padding: 10px;
+  padding: 15px 20px;
   cursor: pointer;
 
   outline: none;
@@ -44,14 +44,31 @@ button:hover {
 }
 
 button:active {
-  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.2);
-  padding: 8px;
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
 }
-
+button:disabled {
+  filter: brightness(20%);
+  -webkit-filter: brightness(20%);
+  cursor: not-allowed;
+}
+button:disabled:active {
+  transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+}
 /* media query */
 @media screen and (max-width: 1000px) {
   .container {
     background-size: cover;
     background-position: center;
+  }
+  button {
+    box-shadow: 5px 5px 30px 20px rgba(0, 0, 0, 0.5);
   }
 }
